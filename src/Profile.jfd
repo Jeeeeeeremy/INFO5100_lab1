@@ -1,0 +1,275 @@
+JFDML JFormDesigner: "7.0.4.0.360" Java: "11.0.5" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundleName": "form"
+	"i18n.keyPrefix": "Profile"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {par l {seq {par t {seq t {par t {par l {seq {space :66:66:p, par c {comp label2:1:c:p::p, comp label1:1:c:p::p, comp label4:1:c:p::p, comp label3:1:c:p::p}}, seq t {space :::p, par l {comp label6:1:t:p:119:p, comp label5::t:p:119:p, comp label19:1:t:p::p, comp label12:1:t:p::p}}}, comp label11:1:t:p::p, comp label10:1::p::p, comp label17:1:t:p::p}, space s:::p, par l {comp firstName:::::x, comp lastName::l:::x, comp addline2::l:::x, comp city::l:::x, comp country::l:::x, seq {par l:::p {comp number:::p:146:p, seq l {comp email:::p:156:p, space u:::p, comp label23:::p::p}, seq l {comp d1startmonth:::p:38:p, space s:::p, comp d1startyear:::p:99:p, space u:::p, comp label24:::p::p}, seq l {par t:::p {comp age::l::0:x, comp DOBmonth:2::p:36:p}, space u:::p, comp DOBday:2::p:38:p, space s:::p, comp DOByear:::p:99:p, space s:::p, comp label21:::p::p}, comp addline1::l:::x}, space :0:0:x}}}, seq l {space :p:66:p, par l {seq {par l {par l {comp label20:1:t:p::p, comp label7:1:t:p::p, comp label16:1:t:p::p}, comp label18::t:p:119:p}, space s:::p, par l {comp career:::::x, seq {par l {comp degree1::l:p:139:p, comp degree2::l:p:138:p, seq l {comp d1endmonth:::p:38:p, space s:::p, comp d1endyear:::p:99:p, space u:::p, comp label29:::p::p}}, space :0:0:x}}}, seq l {par l {comp label9:::p:119:p, comp label8:1:l:p::p}, space s:::p, par l {comp affiliation:::::x, comp major:::::x}}}}, seq l {par l {seq l {space :p:67:p, par t {seq {comp label25:::p:119:p, space s:::p, comp d2startmonth:::p:38:p}, comp button3:::p::p, seq {comp label31:::p:119:p, space :p:18:p, comp d2endmonth:::p:38:p}}, par l {seq l {space :68:68:p, comp button4:::p::p}, seq l {space s:::p, par l {comp d2startyear:::p:99:p, comp d2endyear:::p:99:p}, space u:::p, par l {comp label26:::p::p, comp label30:::p::p}}}}, seq l {space :p:143:p, comp label13:::p::p, space s:::p, comp button5:::p::p}}, space :0:0:x}}, par l {seq {space :p:27:p, comp label22:::p::p}, seq l {space :::p, par l {comp label27:::p::p, comp label15:::p::p, comp label28::l:p::p, comp label14::l:p::p}}}, space :p:55:p}, seq t {space :0:0:x, comp button1:::p:68:p, space :p:120:p}}, par l {comp profileLabel::::428:x, comp imageLabel:::::x}}}"
+					"$verticalGroup": "par l {seq t {space :p:71:p, par l {seq l {par b {comp label1::b:p::p, comp firstName::b:p::p}, space :p:8:p, par t {comp label2:::p::p, comp lastName:::p::p}, space s:::p, par b {comp label3::b:p::p, comp label21::b:p::p, comp DOBmonth::b:p::p, comp DOBday::b:p::p, comp DOByear::b:p::p}, space :p:10:p, par b {comp label4::b:p::p, comp age::b:p::p}, space :p:6:p, par b {comp label5::b:p::p, comp number::b:p::p}, space :p:7:p, par b {comp label6::b:::x, comp label22::b:p::p, comp email::b:p::p, comp label23::b:p::p}, space u:::p, par l {comp label19:::p:30:p, comp addline1:::p::p}, space :p:7:p, par b {comp label12::b:p::p, comp addline2::b:p::p, comp label14::b:p::p}, space :p:25:p, par b {comp label11::b:p::p, comp city::b:p::p}, space u:::p, par b {comp country::b:p::p, comp label10::b:p::p}, space :p:25:p, par b {comp label9::b:p::p, comp affiliation::b:p::p, comp label15::b:p::p}, space :::p, par b {comp label8::b:p::p, comp major::b:p::p, comp label27::b:p::p}, space :::x, par b {comp career::b:p::p, comp label7::b:p::p, comp label28::b:p::p}, space :p:20:p, par t {comp label20:::p::p, comp degree1:::p::p}, space :::p, par t {comp label17:::p::p, par b {comp d1startmonth::b:p::p, comp d1startyear::b:p::p, comp label24::b:p::p}}, space s:::p, par b {comp label18::b:p::p, comp d1endmonth::b:p::p, comp d1endyear::b:p::p, comp label29::b:p::p}, space :p:3:p, comp button1:::p:19:p, space :p:20:p, par b {comp degree2::b:p::p, comp label16::b:p::p}, space :p:10:p, par b {comp label25::b:p::p, comp d2startmonth::b:p::p, comp d2startyear::b:p::p, comp label26::b:p::p}, space :::p, par b {comp label31::b:p::p, comp d2endmonth::b:p::p, comp d2endyear::b:p::p, comp label30::b:p::p}, space :p:35:p, par b {comp label13::b:p::p, comp button5::b:p::p}, space :p:40:p, par b {comp button3::b:p::p, comp button4::b:p::p}}, seq l {comp imageLabel:::p:328:p, space s:::p, comp profileLabel:::p:603:p}}, space :p:25:p}}"
+				} ) {
+					name: "contentPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": new FormMessage( null, "Profile.label1.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label2"
+						"text": new FormMessage( null, "Profile.label2.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label3"
+						"text": new FormMessage( null, "Profile.label3.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label4"
+						"text": new FormMessage( null, "Profile.label4.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label6"
+						"text": new FormMessage( null, "Profile.label6.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label19"
+						"text": new FormMessage( null, "Profile.label19.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label20"
+						"text": new FormMessage( null, "Profile.label20.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label7"
+						"text": new FormMessage( null, "Profile.label7.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label8"
+						"text": new FormMessage( null, "Profile.label8.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label9"
+						"text": new FormMessage( null, "Profile.label9.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label10"
+						"text": new FormMessage( null, "Profile.label10.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label11"
+						"text": new FormMessage( null, "Profile.label11.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label12"
+						"text": new FormMessage( null, "Profile.label12.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label13"
+						"text": new FormMessage( null, "Profile.label13.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label16"
+						"text": new FormMessage( null, "Profile.label16.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label17"
+						"text": new FormMessage( null, "Profile.label17.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "lastName"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label5"
+						"text": new FormMessage( null, "Profile.label5.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "firstName"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "number"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "age"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "email"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "addline1"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "addline2"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "affiliation"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "major"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "career"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "degree1"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label18"
+						"text": new FormMessage( null, "Profile.label18.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "degree2"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "city"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "country"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "DOBmonth"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label21"
+						"text": new FormMessage( null, "Profile.label21.text" )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label22"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label23"
+						"text": new FormMessage( null, "Profile.label23.text" )
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "DOBday"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "DOByear"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d1startmonth"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d1startyear"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label24"
+						"text": new FormMessage( null, "Profile.label24.text" )
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d1endmonth"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d1endyear"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label29"
+						"text": new FormMessage( null, "Profile.label29.text" )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label25"
+						"text": new FormMessage( null, "Profile.label25.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d2startmonth"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d2startyear"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label26"
+						"text": new FormMessage( null, "Profile.label26.text" )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label30"
+						"text": new FormMessage( null, "Profile.label30.text" )
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d2endyear"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "d2endmonth"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label31"
+						"text": new FormMessage( null, "Profile.label31.text" )
+						"horizontalTextPosition": 0
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button3"
+						"text": new FormMessage( null, "Profile.button3.text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "submit", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button4"
+						"text": new FormMessage( null, "Profile.button4.text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "display", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "imageLabel"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button5"
+						"text": new FormMessage( null, "Profile.button5.text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "uploadPicture", true ) )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "addpicture", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "profileLabel"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button1"
+						"text": new FormMessage( null, "Profile.button1.text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "degree2Visibile", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label14"
+						"text": new FormMessage( null, "Profile.label14.text" )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label15"
+						"text": new FormMessage( null, "Profile.label15.text" )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label27"
+						"text": new FormMessage( null, "Profile.label27.text" )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label28"
+						"text": new FormMessage( null, "Profile.label28.text" )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1100, 1025 )
+		} )
+	}
+}
