@@ -5,8 +5,6 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,20 +24,24 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class Profile extends JFrame {
     //static String  regEx1 = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+    //used to check email address format
     static String  regEx1 = "^(.+)@(\\\\S+)$";
     Pattern emailcheck = Pattern.compile(regEx1);
-    static Calendar calendar = Calendar.getInstance();
     person p = new person();
+    //used to keep photo
     ImageIcon photo;
 
     public Profile() {
         initComponents();
+        //make degree2 option invisible
         degree2(false);
     }
 
+    //submit action
     private void submit(ActionEvent e) {
         // TODO add your code here
         if (submitcheck()){
+            //assign values to model
             p.setFirstName(firstName.getText());
             p.setLastName(lastName.getText());
             p.setDOB(DOBmonth.getText()+"/"+DOBday.getText()+"/"+DOByear.getText());
@@ -57,6 +59,7 @@ public class Profile extends JFrame {
                 p.setDegree1(degree1.getText());
                 p.setDegree1Startdate(d1startmonth.getText()+"/"+d1startyear.getText());
                 p.setDegree1End(d1endmonth.getText()+"/"+d1endyear.getText());
+                //add degree2 information when degree1 is completed
                 if (degree2.getText().length()!=0){
                     p.setDegree2(degree2.getText());
                     p.setDegree2Startdate(d2startmonth.getText()+"/"+d2startyear.getText());
@@ -70,7 +73,7 @@ public class Profile extends JFrame {
         }
 
     }
-
+    //clear all fields after submitting
     private void clear(){
         firstName.setText("");
         lastName.setText("");
@@ -101,7 +104,7 @@ public class Profile extends JFrame {
         photo=null;
         JOptionPane.showMessageDialog(this,"successfully uploaded");
     }
-
+    //only show degree2 option when the button is clicked
     private void degree2(boolean flag){
         degree2.setVisible(flag);
         d2startmonth.setVisible(flag);
@@ -110,22 +113,42 @@ public class Profile extends JFrame {
         d2endyear.setVisible(flag);
         label26.setVisible(flag);
         label30.setVisible(flag);
-//        if (!flag){
-//            degree2.setText("");
-//            d2startmonth.setText("");
-//            d2startyear.setText("");
-//            d2endmonth.setText("");
-//            d2endyear.setText("");
-//        }
     }
 
-    private boolean submitcheck(){
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH)+1;
-        int day = calendar.get(Calendar.DATE);
-        Pattern digitp = Pattern.compile("^[-\\+]?[\\d]*$");
 
-        calendar.setTime(new Date());
+
+    private boolean degree1check(){
+        Pattern digitp = Pattern.compile("^[-\\+]?[\\d]*$");
+        if (degree1.getText().length()!=0){
+            if (d1startmonth.getText().length()==0||!digitp.matcher(d1startmonth.getText()).matches()||Integer.valueOf(d1startmonth.getText())>12||Integer.valueOf(d1startmonth.getText())<1){
+                JOptionPane.showMessageDialog(this,"degree1 start date month is missing");
+                return false;
+            }
+            if (d1startyear.getText().length()==0||!digitp.matcher(d1startyear.getText()).matches()||Integer.valueOf(d1startyear.getText())<1970){
+                JOptionPane.showMessageDialog(this,"degree1 start date year is missing");
+                return false;
+            }
+            if (d1endmonth.getText().length()==0||!digitp.matcher(d1endmonth.getText()).matches()||Integer.valueOf(d1endmonth.getText())>12||Integer.valueOf(d1endmonth.getText())<1){
+                JOptionPane.showMessageDialog(this,"degree1 end date month is missing");
+                return false;
+            }
+            if (d1endyear.getText().length()==0||!digitp.matcher(d1endyear.getText()).matches()||Integer.valueOf(d1endyear.getText())<1970){
+                JOptionPane.showMessageDialog(this,"degree1 end date year is missing");
+                return false;
+            }
+            if (Integer.valueOf(d1startyear.getText())>Integer.valueOf(d1endyear.getText())){
+                JOptionPane.showMessageDialog(this,"end date should later than start date");
+                return false;
+            }else if (Integer.valueOf(d1startyear.getText())==Integer.valueOf(d1endyear.getText())&&Integer.valueOf(d1startmonth.getText())>Integer.valueOf(d1endmonth.getText())){
+                JOptionPane.showMessageDialog(this,"end date should later than start date");
+                return false;
+            }
+        }
+        return true;
+    }
+    //check the data integrity
+    private boolean submitcheck(){
+        Pattern digitp = Pattern.compile("^[-\\+]?[\\d]*$");
         if (lastName.getText().length()==0){
             JOptionPane.showMessageDialog(this,"lastName is missing");
             return false;
@@ -171,31 +194,8 @@ public class Profile extends JFrame {
             JOptionPane.showMessageDialog(this,"country is missing");
             return false;
         }
-        if (degree1.getText().length()!=0){
-            if (d1startmonth.getText().length()==0||!digitp.matcher(d1startmonth.getText()).matches()||Integer.valueOf(d1startmonth.getText())>12||Integer.valueOf(d1startmonth.getText())<1){
-                JOptionPane.showMessageDialog(this,"degree1 start date month is missing");
-                return false;
-            }
-            if (d1startyear.getText().length()==0||!digitp.matcher(d1startyear.getText()).matches()||Integer.valueOf(d1startyear.getText())<1970){
-                JOptionPane.showMessageDialog(this,"degree1 start date year is missing");
-                return false;
-            }
-            if (d1endmonth.getText().length()==0||!digitp.matcher(d1endmonth.getText()).matches()||Integer.valueOf(d1endmonth.getText())>12||Integer.valueOf(d1endmonth.getText())<1){
-                JOptionPane.showMessageDialog(this,"degree1 end date month is missing");
-                return false;
-            }
-            if (d1endyear.getText().length()==0||!digitp.matcher(d1endyear.getText()).matches()||Integer.valueOf(d1endyear.getText())<1970){
-                JOptionPane.showMessageDialog(this,"degree1 end date year is missing");
-                return false;
-            }
-            if (Integer.valueOf(d1startyear.getText())>Integer.valueOf(d1endyear.getText())){
-                JOptionPane.showMessageDialog(this,"end date should later than start date");
-                return false;
-            }else if (Integer.valueOf(d1startyear.getText())==Integer.valueOf(d1endyear.getText())&&Integer.valueOf(d1startmonth.getText())>Integer.valueOf(d1endmonth.getText())){
-                JOptionPane.showMessageDialog(this,"end date should later than start date");
-                return false;
-            }
-        }
+        if (!degree1check())
+            return false;
 
         if (degree2.getText().length()!=0){
             if (d2startmonth.getText().length()==0||!digitp.matcher(d2startmonth.getText()).matches()||Integer.valueOf(d2startmonth.getText())>12||Integer.valueOf(d2startmonth.getText())<1){
@@ -232,6 +232,7 @@ public class Profile extends JFrame {
         return true;
     }
 
+    //transfer image file to byte array which is used to initiate the ImageIcon
     public byte[] fileToByte(File img) throws Exception {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         byte[] bytes = new byte[0];
@@ -249,14 +250,17 @@ public class Profile extends JFrame {
         return bytes;
     }
 
-
+    // used to check the picture and upload the picture
     private void uploadPicture(ActionEvent e) {
         // TODO add your code here
+        //Jfilechooser to show the folder list
         JFileChooser chooser = new JFileChooser();
         chooser.setMultiSelectionEnabled(true);
+        //check the postfix of the file
         FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg", "png");
         chooser.setFileFilter(filter);
         int returnVal = chooser.showOpenDialog(button3);
+        //perform the upload action when it passes the check
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File[] files = chooser.getSelectedFiles();
             if (files == null || files.length == 0) {
@@ -270,6 +274,7 @@ public class Profile extends JFrame {
                 return;
             }
             try {
+                //assign the image to the model
                 ImageIcon imageIcon = new ImageIcon(fileToByte(picture));
                 //p.setPhoto(imageIcon);
                 photo = imageIcon;
@@ -279,6 +284,7 @@ public class Profile extends JFrame {
             }
     }
 
+    //display profile photo in the label
     private void displayImage(){
         int height = imageLabel.getHeight();
         int width  = imageLabel.getWidth();
@@ -290,6 +296,7 @@ public class Profile extends JFrame {
         //imageLabel.getIcon();
     }
 
+    //display text information
     private void display(ActionEvent e) {
             // TODO add your code here
         displayImage();
@@ -322,7 +329,7 @@ public class Profile extends JFrame {
                 "Street Line 1: "+ StreetLine1 +"<br>" +
                 "Street Line 2: "+ StreetLine2 +"<br>" +
                 "City: "+City+"<br>" +
-                "Country: "+Country+"\n" +
+                "Country: "+Country+"<br>" +
                 "Affiliation:"+Affiliation+"<br>" +
                 "Major: "+ Major+"<br>" +
                 "Career: "+Career+"<br>" +
@@ -339,9 +346,11 @@ public class Profile extends JFrame {
         // TODO add your code here
     }
 
+    //make degree2 visibile
     private void degree2Visibile(ActionEvent e) {
         // TODO add your code here
-        if (degree1.getText().length()==0){
+        //check if the user completed the degree1 information
+        if (!degree1check()){
             JOptionPane.showMessageDialog(this,"please complete degree1 first");
         }else {
             degree2(true);
