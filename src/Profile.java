@@ -293,12 +293,16 @@ public class Profile extends JFrame {
         ImageIcon scaleimage = new ImageIcon();
         scaleimage.setImage(image);
         imageLabel.setIcon(scaleimage);
-        //imageLabel.getIcon();
     }
 
     //display text information
     private void display(ActionEvent e) {
             // TODO add your code here
+        if (p.getPhoto()==null)
+        {
+            JOptionPane.showMessageDialog(new JDialog(), "no profile found");
+            return;
+        }
         displayImage();
         String FirstName = p.getFirstName();
         String LastName = p.getLastName();
